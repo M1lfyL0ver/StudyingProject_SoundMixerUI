@@ -551,7 +551,6 @@ GameObject:
   m_Component:
   - component: {fileID: 152207201}
   - component: {fileID: 152207202}
-  - component: {fileID: 152207203}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -629,20 +628,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &152207203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152207200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676d72f86ec036b47960b00fb39bd050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 0.5
-  isMoving: 1
 --- !u!1 &204383471
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +674,6 @@ GameObject:
   m_Component:
   - component: {fileID: 333570069}
   - component: {fileID: 333570071}
-  - component: {fileID: 333570070}
   m_Layer: 0
   m_Name: 2 (1)
   m_TagString: Untagged
@@ -712,20 +696,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1490517077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &333570070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333570068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676d72f86ec036b47960b00fb39bd050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 0.5
-  isMoving: 1
 --- !u!212 &333570071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -927,7 +897,6 @@ GameObject:
   m_Component:
   - component: {fileID: 361037113}
   - component: {fileID: 361037115}
-  - component: {fileID: 361037114}
   m_Layer: 0
   m_Name: 3 (1)
   m_TagString: Untagged
@@ -950,20 +919,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1490517077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &361037114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361037112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676d72f86ec036b47960b00fb39bd050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 1
-  isMoving: 1
 --- !u!212 &361037115
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1262,7 +1217,6 @@ GameObject:
   m_Component:
   - component: {fileID: 449714383}
   - component: {fileID: 449714385}
-  - component: {fileID: 449714384}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -1285,20 +1239,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1490517077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &449714384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449714382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676d72f86ec036b47960b00fb39bd050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 1
-  isMoving: 1
 --- !u!212 &449714385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2727,7 +2667,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1459205744}
   - component: {fileID: 1459205746}
-  - component: {fileID: 1459205745}
   m_Layer: 0
   m_Name: 4 (1)
   m_TagString: Untagged
@@ -2750,20 +2689,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1490517077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1459205745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459205743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676d72f86ec036b47960b00fb39bd050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 1.5
-  isMoving: 1
 --- !u!212 &1459205746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3006,12 +2931,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 908bbc96fd954954bbcbdbea046dfb32, type: 2}
-  masterSlider: {fileID: 627740916}
-  musicSlider: {fileID: 822913923}
-  buttonSlider: {fileID: 2075365350}
-  masterVolumeParam: Master
-  musicVolumeParam: Music
-  buttonsVolumeParam: Buttons
+  volumeSlider: {fileID: 0}
+  muteToggle: {fileID: 0}
+  volumeParameter: 
+  minVolumeDB: -80
+  volumeThreshold: 0.001
 --- !u!1 &1701462923
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,7 +3712,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2040066592}
   - component: {fileID: 2040066593}
-  - component: {fileID: 2040066594}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -3866,20 +3789,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2040066594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040066591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676d72f86ec036b47960b00fb39bd050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 1.5
-  isMoving: 1
 --- !u!1 &2075365348
 GameObject:
   m_ObjectHideFlags: 0

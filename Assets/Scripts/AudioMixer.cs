@@ -4,15 +4,15 @@ using UnityEngine.Audio;
 
 public class AudioMixerController : MonoBehaviour
 {
-    [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private Slider volumeSlider;
-    [SerializeField] private Toggle muteToggle;
-    [SerializeField] private string volumeParameter;
-    [SerializeField] private float minVolumeDB = -80f;
-    [SerializeField] private float volumeThreshold = 0.001f;
+    [SerializeField] private AudioMixer _audioMixer;
+    [SerializeField] private Slider _volumeSlider;
+    [SerializeField] private string _volumeParameter;
+    [SerializeField] private float _minVolumeDB = -80f;
+    [SerializeField] private float _volumeThreshold = 0.001f;
+    [SerializeField] private float _volumeMultiplier = 20f;
 
-    private float currentVolume = 1f;
-    private bool isMuted = false;
+    private float _currentVolume = 1f;
+    private bool _isMuted = false;
 
     private void Start()
     {
@@ -21,82 +21,70 @@ public class AudioMixerController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (volumeSlider != null)
-            volumeSlider.onValueChanged.AddListener(SetVolume);
-
-        if (muteToggle != null)
-            muteToggle.onValueChanged.AddListener(ToggleMute);
+        if (_volumeSlider != null)
+        {
+            _volumeSlider.onValueChanged.AddListener(SetVolume);
+        }
     }
 
     private void OnDisable()
     {
-        if (volumeSlider != null)
-            volumeSlider.onValueChanged.RemoveListener(SetVolume);
-
-        if (muteToggle != null)
-            muteToggle.onValueChanged.RemoveListener(ToggleMute);
+        if (_volumeSlider != null)
+        {
+            _volumeSlider.onValueChanged.RemoveListener(SetVolume);
+        }
     }
 
     private void InitializeUI()
     {
-        if (volumeSlider != null)
+        if (_volumeSlider != null)
         {
-            volumeSlider.SetValueWithoutNotify(currentVolume);
+            _volumeSlider.SetValueWithoutNotify(_currentVolume);
         }
 
-        if (muteToggle != null)
-        {
-            muteToggle.SetIsOnWithoutNotify(isMuted);
-        }
-
-        ApplyVolumeToMixer(currentVolume);
+        ApplyVolumeToMixer(_currentVolume);
     }
 
     public void SetVolume(float volume)
     {
-        currentVolume = Mathf.Clamp01(volume);
+        _currentVolume = Mathf.Clamp01(volume);
 
-        if (!isMuted)
+        if (!_isMuted)
         {
-            ApplyVolumeToMixer(currentVolume);
-        }
-
-        if (muteToggle != null && currentVolume <= volumeThreshold && !isMuted)
-        {
-            muteToggle.SetIsOnWithoutNotify(true);
-            isMuted = true;
+            ApplyVolumeToMixer(_currentVolume);
         }
     }
 
     public void ToggleMute(bool muted)
     {
-        isMuted = muted;
+        _isMuted = muted;
 
-        if (isMuted)
+        if (_isMuted)
         {
-            audioMixer.SetFloat(volumeParameter, minVolumeDB);
+            _audioMixer.SetFloat(_volumeParameter, _minVolumeDB);
         }
         else
         {
-            ApplyVolumeToMixer(currentVolume);
+            ApplyVolumeToMixer(_currentVolume);
         }
 
-        if (volumeSlider != null)
+        if (_volumeSlider != null)
         {
-            volumeSlider.interactable = !isMuted;
+            _volumeSlider.interactable = !_isMuted;
         }
     }
 
     private void ApplyVolumeToMixer(float volume)
     {
-        float volumeDB = volume > volumeThreshold ?
-            Mathf.Log10(volume) * 20f :
-            minVolumeDB;
+        float volumeDB = volume > _volumeThreshold ?
+            Mathf.Log10(volume) * _volumeMultiplier :
+            _minVolumeDB;
 
-        audioMixer.SetFloat(volumeParameter, volumeDB);
+        _audioMixer.SetFloat(_volumeParameter, volumeDB);
     }
 
-    public void Mute() => ToggleMute(true);
-    public void Unmute() => ToggleMute(false);
-    public void SetVolumeParameter(string parameter) => volumeParameter = parameter;
+    public void SetVolumeParameter(string parameter)
+    {
+        _volumeParameter = parameter;
+    }
 }
